@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
 
 import Container from 'components/Container';
-import { Topbar,  Footer } from './components';
+import { Topbar, Sidebar, Footer } from './components';
 
 interface Props {
   children: React.ReactNode;
@@ -14,7 +14,21 @@ interface Props {
 
 const Fixed = ({ children }: Props): JSX.Element => {
   const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+    defaultMatches: true,
+  });
 
+  const [openSidebar, setOpenSidebar] = useState(false);
+
+  const handleSidebarOpen = (): void => {
+    setOpenSidebar(true);
+  };
+
+  const handleSidebarClose = (): void => {
+    setOpenSidebar(false);
+  };
+
+  const open = isMd ? false : openSidebar;
 
   return (
     <Box>
