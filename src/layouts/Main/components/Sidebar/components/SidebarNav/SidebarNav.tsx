@@ -12,7 +12,6 @@ interface Props {
     account: Array<PageItem>;
     secondary: Array<PageItem>;
     blog: Array<PageItem>;
-    portfolio: Array<PageItem>;
   };
 }
 
@@ -25,7 +24,6 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
     secondary: secondaryPages,
     company: companyPages,
     account: accountPages,
-    portfolio: portfolioPages,
     blog: blogPages,
   } = pages;
 
@@ -66,9 +64,6 @@ const SidebarNav = ({ pages }: Props): JSX.Element => {
         </Box>
         <Box>
           <NavItem title={'Blog'} items={blogPages} />
-        </Box>
-        <Box>
-          <NavItem title={'Portfolio'} items={portfolioPages} />
         </Box>
         <Box marginTop={2}>
           <Button

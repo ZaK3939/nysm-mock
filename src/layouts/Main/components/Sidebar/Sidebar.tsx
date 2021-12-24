@@ -14,7 +14,6 @@ interface Props {
     account: Array<PageItem>;
     secondary: Array<PageItem>;
     blog: Array<PageItem>;
-    portfolio: Array<PageItem>;
   };
 }
 

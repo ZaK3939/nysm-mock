@@ -1,7 +1,7 @@
 import React from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Fixed from 'layouts/Fixed';
+import Fluid from 'layouts/Fluid';
 import Container from 'components/Container';
 import {
   GetStarted,
@@ -16,7 +16,7 @@ const IndexView = (): JSX.Element => {
   const theme = useTheme();
   return (
     <Box sx={{ overflowX: 'hidden' }}>
-      <Fixed bgcolor={'background.paper'}>
+      <Fluid bgcolor={'background.paper'}>
         <Hero />
         <Container>
           <Services />
@@ -61,7 +61,7 @@ const IndexView = (): JSX.Element => {
         <Container>
           <GetStarted />
         </Container>
-      </Fixed>
+      </Fluid>
     </Box>
   );
 };

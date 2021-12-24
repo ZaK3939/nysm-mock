@@ -2,17 +2,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-import { alpha, useTheme } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
+import { useTheme } from '@mui/material/styles';
 
 import { ThemeModeToggler } from './components';
 
-interface Props {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onSidebarOpen: () => void;
-}
 
-const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
+
+const Topbar = (): JSX.Element => {
   const theme = useTheme();
   const { mode } = theme.palette;
 
@@ -97,19 +93,6 @@ const Topbar = ({ onSidebarOpen }: Props): JSX.Element => {
         <Box marginRight={1}>
           <ThemeModeToggler />
         </Box>
-        <Button
-          onClick={() => onSidebarOpen()}
-          aria-label="Menu"
-          variant={'outlined'}
-          sx={{
-            borderRadius: 2,
-            minWidth: 'auto',
-            padding: 1,
-            borderColor: alpha(theme.palette.divider, 0.2),
-          }}
-        >
-          <MenuIcon />
-        </Button>
       </Box>
     </Box>
   );
